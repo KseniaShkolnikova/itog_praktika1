@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cce6936889d84050beaa749abfd47a6b" Name="Diagram1">
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Autorization_Clients" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Autorization_Employees" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Checks" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Clients" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Employees" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Goods" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Goods_Products" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Goods_Types" Width="1.5" PointX="3.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Job_Title" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Orders" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Payment_Types" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Products" Width="1.5" PointX="6" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUSHIK_STOREModel.Statuss" Width="1.5" PointX="3.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Autorizat__Clien__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Autorizat__Emplo__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Checks__Employee__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Checks__Good_ID__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Checks__Order_ID__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Orders__Clients___5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Employees__Job_T__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Goods__Good_Type__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Goods_Pro__Good___534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Goods_Pro__Produ__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Orders__Payment___5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="SUSHIK_STOREModel.FK__Orders__Statuss___5CD6CB2B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

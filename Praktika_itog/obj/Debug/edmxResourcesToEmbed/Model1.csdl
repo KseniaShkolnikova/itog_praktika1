@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SUSHIK_STOREModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autorization_Clients">
+    <Key>
+      <PropertyRef Name="ID_Autorization" />
+    </Key>
+    <Property Name="ID_Autorization" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Logini" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Porol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Clients_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Autorizat__Clien__3B75D760" FromRole="Autorization_Clients" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Autorization_Employees">
+    <Key>
+      <PropertyRef Name="ID_Autorization" />
+    </Key>
+    <Property Name="ID_Autorization" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Logini" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Porol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Autorizat__Emplo__46E78A0C" FromRole="Autorization_Employees" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Checks">
+    <Key>
+      <PropertyRef Name="ID_Check" />
+    </Key>
+    <Property Name="ID_Check" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Good_ID" Type="Int32" Nullable="false" />
+    <Property Name="Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date_Of_Payment" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Summ" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Checks__Employee__6383C8BA" FromRole="Checks" ToRole="Employees" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Checks__Good_ID__619B8048" FromRole="Checks" ToRole="Goods" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Checks__Order_ID__628FA481" FromRole="Checks" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ID_Clients" />
+    </Key>
+    <Property Name="ID_Clients" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Names" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Autorization_Clients" Relationship="Self.FK__Autorizat__Clien__3B75D760" FromRole="Clients" ToRole="Autorization_Clients" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Clients___5DCAEF64" FromRole="Clients" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID_Employee" />
+    </Key>
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Job_Title_ID" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Names" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Autorization_Employees" Relationship="Self.FK__Autorizat__Emplo__46E78A0C" FromRole="Employees" ToRole="Autorization_Employees" />
+    <NavigationProperty Name="Checks" Relationship="Self.FK__Checks__Employee__6383C8BA" FromRole="Employees" ToRole="Checks" />
+    <NavigationProperty Name="Job_Title" Relationship="Self.FK__Employees__Job_T__4222D4EF" FromRole="Employees" ToRole="Job_Title" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="ID_Good" />
+    </Key>
+    <Property Name="ID_Good" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Of_Good" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Good_Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Good_Type_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Checks" Relationship="Self.FK__Checks__Good_ID__619B8048" FromRole="Goods" ToRole="Checks" />
+    <NavigationProperty Name="Goods_Types" Relationship="Self.FK__Goods__Good_Type__5070F446" FromRole="Goods" ToRole="Goods_Types" />
+    <NavigationProperty Name="Goods_Products" Relationship="Self.FK__Goods_Pro__Good___534D60F1" FromRole="Goods" ToRole="Goods_Products" />
+  </EntityType>
+  <EntityType Name="Goods_Products">
+    <Key>
+      <PropertyRef Name="ID_Goods_Products" />
+    </Key>
+    <Property Name="ID_Goods_Products" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Good_ID" Type="Int32" Nullable="false" />
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods_Pro__Good___534D60F1" FromRole="Goods_Products" ToRole="Goods" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Goods_Pro__Produ__5441852A" FromRole="Goods_Products" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Goods_Types">
+    <Key>
+      <PropertyRef Name="ID_Good_Type" />
+    </Key>
+    <Property Name="ID_Good_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Of_Good_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__Good_Type__5070F446" FromRole="Goods_Types" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Job_Title">
+    <Key>
+      <PropertyRef Name="ID_Job_Title" />
+    </Key>
+    <Property Name="ID_Job_Title" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__Job_T__4222D4EF" FromRole="Job_Title" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="ID_Order" />
+    </Key>
+    <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Statuss_ID" Type="Int32" Nullable="false" />
+    <Property Name="Clients_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date_Of_Payment" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Payment_Types_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Checks" Relationship="Self.FK__Checks__Order_ID__628FA481" FromRole="Orders" ToRole="Checks" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Orders__Clients___5DCAEF64" FromRole="Orders" ToRole="Clients" />
+    <NavigationProperty Name="Payment_Types" Relationship="Self.FK__Orders__Payment___5EBF139D" FromRole="Orders" ToRole="Payment_Types" />
+    <NavigationProperty Name="Statuss" Relationship="Self.FK__Orders__Statuss___5CD6CB2B" FromRole="Orders" ToRole="Statuss" />
+  </EntityType>
+  <EntityType Name="Payment_Types">
+    <Key>
+      <PropertyRef Name="ID_Payment_Types" />
+    </Key>
+    <Property Name="ID_Payment_Types" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Of_Payment_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Payment___5EBF139D" FromRole="Payment_Types" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ID_Product" />
+    </Key>
+    <Property Name="ID_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Of_Product" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Colvo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Goods_Products" Relationship="Self.FK__Goods_Pro__Produ__5441852A" FromRole="Products" ToRole="Goods_Products" />
+  </EntityType>
+  <EntityType Name="Statuss">
+    <Key>
+      <PropertyRef Name="ID_Statuss" />
+    </Key>
+    <Property Name="ID_Statuss" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Of_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Statuss___5CD6CB2B" FromRole="Statuss" ToRole="Orders" />
+  </EntityType>
+  <Association Name="FK__Autorizat__Clien__3B75D760">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Autorization_Clients" Type="Self.Autorization_Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ID_Clients" />
+      </Principal>
+      <Dependent Role="Autorization_Clients">
+        <PropertyRef Name="Clients_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Autorizat__Emplo__46E78A0C">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Autorization_Employees" Type="Self.Autorization_Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employee" />
+      </Principal>
+      <Dependent Role="Autorization_Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Checks__Employee__6383C8BA">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Checks" Type="Self.Checks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employee" />
+      </Principal>
+      <Dependent Role="Checks">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Checks__Good_ID__619B8048">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="Checks" Type="Self.Checks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="ID_Good" />
+      </Principal>
+      <Dependent Role="Checks">
+        <PropertyRef Name="Good_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Checks__Order_ID__628FA481">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Checks" Type="Self.Checks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="ID_Order" />
+      </Principal>
+      <Dependent Role="Checks">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Clients___5DCAEF64">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ID_Clients" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Clients_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__Job_T__4222D4EF">
+    <End Role="Job_Title" Type="Self.Job_Title" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job_Title">
+        <PropertyRef Name="ID_Job_Title" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Job_Title_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__Good_Type__5070F446">
+    <End Role="Goods_Types" Type="Self.Goods_Types" Multiplicity="1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods_Types">
+        <PropertyRef Name="ID_Good_Type" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="Good_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods_Pro__Good___534D60F1">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="Goods_Products" Type="Self.Goods_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="ID_Good" />
+      </Principal>
+      <Dependent Role="Goods_Products">
+        <PropertyRef Name="Good_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods_Pro__Produ__5441852A">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Goods_Products" Type="Self.Goods_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID_Product" />
+      </Principal>
+      <Dependent Role="Goods_Products">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Payment___5EBF139D">
+    <End Role="Payment_Types" Type="Self.Payment_Types" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_Types">
+        <PropertyRef Name="ID_Payment_Types" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Payment_Types_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Statuss___5CD6CB2B">
+    <End Role="Statuss" Type="Self.Statuss" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuss">
+        <PropertyRef Name="ID_Statuss" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Statuss_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SUSHIK_STOREEntities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autorization_Clients" EntityType="Self.Autorization_Clients" />
+    <EntitySet Name="Autorization_Employees" EntityType="Self.Autorization_Employees" />
+    <EntitySet Name="Checks" EntityType="Self.Checks" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="Goods_Products" EntityType="Self.Goods_Products" />
+    <EntitySet Name="Goods_Types" EntityType="Self.Goods_Types" />
+    <EntitySet Name="Job_Title" EntityType="Self.Job_Title" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="Payment_Types" EntityType="Self.Payment_Types" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="Statuss" EntityType="Self.Statuss" />
+    <AssociationSet Name="FK__Autorizat__Clien__3B75D760" Association="Self.FK__Autorizat__Clien__3B75D760">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Autorization_Clients" EntitySet="Autorization_Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Autorizat__Emplo__46E78A0C" Association="Self.FK__Autorizat__Emplo__46E78A0C">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Autorization_Employees" EntitySet="Autorization_Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Checks__Employee__6383C8BA" Association="Self.FK__Checks__Employee__6383C8BA">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Checks" EntitySet="Checks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Checks__Good_ID__619B8048" Association="Self.FK__Checks__Good_ID__619B8048">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Checks" EntitySet="Checks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Checks__Order_ID__628FA481" Association="Self.FK__Checks__Order_ID__628FA481">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Checks" EntitySet="Checks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Clients___5DCAEF64" Association="Self.FK__Orders__Clients___5DCAEF64">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__Job_T__4222D4EF" Association="Self.FK__Employees__Job_T__4222D4EF">
+      <End Role="Job_Title" EntitySet="Job_Title" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__Good_Type__5070F446" Association="Self.FK__Goods__Good_Type__5070F446">
+      <End Role="Goods_Types" EntitySet="Goods_Types" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods_Pro__Good___534D60F1" Association="Self.FK__Goods_Pro__Good___534D60F1">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Goods_Products" EntitySet="Goods_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods_Pro__Produ__5441852A" Association="Self.FK__Goods_Pro__Produ__5441852A">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Goods_Products" EntitySet="Goods_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Payment___5EBF139D" Association="Self.FK__Orders__Payment___5EBF139D">
+      <End Role="Payment_Types" EntitySet="Payment_Types" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Statuss___5CD6CB2B" Association="Self.FK__Orders__Statuss___5CD6CB2B">
+      <End Role="Statuss" EntitySet="Statuss" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

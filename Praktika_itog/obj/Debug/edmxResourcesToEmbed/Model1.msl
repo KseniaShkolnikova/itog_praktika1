@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SUSHIK_STOREModelContainer" CdmEntityContainer="SUSHIK_STOREEntities4">
+    <EntitySetMapping Name="Autorization_Clients">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Autorization_Clients">
+        <MappingFragment StoreEntitySet="Autorization_Clients">
+          <ScalarProperty Name="ID_Autorization" ColumnName="ID_Autorization" />
+          <ScalarProperty Name="Logini" ColumnName="Logini" />
+          <ScalarProperty Name="Porol" ColumnName="Porol" />
+          <ScalarProperty Name="Clients_ID" ColumnName="Clients_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autorization_Employees">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Autorization_Employees">
+        <MappingFragment StoreEntitySet="Autorization_Employees">
+          <ScalarProperty Name="ID_Autorization" ColumnName="ID_Autorization" />
+          <ScalarProperty Name="Logini" ColumnName="Logini" />
+          <ScalarProperty Name="Porol" ColumnName="Porol" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Checks">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Checks">
+        <MappingFragment StoreEntitySet="Checks">
+          <ScalarProperty Name="ID_Check" ColumnName="ID_Check" />
+          <ScalarProperty Name="Good_ID" ColumnName="Good_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Date_Of_Payment" ColumnName="Date_Of_Payment" />
+          <ScalarProperty Name="Summ" ColumnName="Summ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="ID_Clients" ColumnName="ID_Clients" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Names" ColumnName="Names" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="ID_Employee" ColumnName="ID_Employee" />
+          <ScalarProperty Name="Job_Title_ID" ColumnName="Job_Title_ID" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Names" ColumnName="Names" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="ID_Good" ColumnName="ID_Good" />
+          <ScalarProperty Name="Name_Of_Good" ColumnName="Name_Of_Good" />
+          <ScalarProperty Name="Good_Price" ColumnName="Good_Price" />
+          <ScalarProperty Name="Good_Type_ID" ColumnName="Good_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Products">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Goods_Products">
+        <MappingFragment StoreEntitySet="Goods_Products">
+          <ScalarProperty Name="ID_Goods_Products" ColumnName="ID_Goods_Products" />
+          <ScalarProperty Name="Good_ID" ColumnName="Good_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Types">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Goods_Types">
+        <MappingFragment StoreEntitySet="Goods_Types">
+          <ScalarProperty Name="ID_Good_Type" ColumnName="ID_Good_Type" />
+          <ScalarProperty Name="Name_Of_Good_Type" ColumnName="Name_Of_Good_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Job_Title">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Job_Title">
+        <MappingFragment StoreEntitySet="Job_Title">
+          <ScalarProperty Name="ID_Job_Title" ColumnName="ID_Job_Title" />
+          <ScalarProperty Name="Name_Job_Title" ColumnName="Name_Job_Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+          <ScalarProperty Name="Statuss_ID" ColumnName="Statuss_ID" />
+          <ScalarProperty Name="Clients_ID" ColumnName="Clients_ID" />
+          <ScalarProperty Name="Date_Of_Payment" ColumnName="Date_Of_Payment" />
+          <ScalarProperty Name="Payment_Types_ID" ColumnName="Payment_Types_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Types">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Payment_Types">
+        <MappingFragment StoreEntitySet="Payment_Types">
+          <ScalarProperty Name="ID_Payment_Types" ColumnName="ID_Payment_Types" />
+          <ScalarProperty Name="Name_Of_Payment_Type" ColumnName="Name_Of_Payment_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="Name_Of_Product" ColumnName="Name_Of_Product" />
+          <ScalarProperty Name="Colvo" ColumnName="Colvo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statuss">
+      <EntityTypeMapping TypeName="SUSHIK_STOREModel.Statuss">
+        <MappingFragment StoreEntitySet="Statuss">
+          <ScalarProperty Name="ID_Statuss" ColumnName="ID_Statuss" />
+          <ScalarProperty Name="Name_Of_Status" ColumnName="Name_Of_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

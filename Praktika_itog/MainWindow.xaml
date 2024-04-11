@@ -1,0 +1,22 @@
+﻿<Window x:Class="Praktika_itog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Praktika_itog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="550" MinHeight="500" MinWidth="350">
+    <Grid  Background="#FFF0C9ED">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="188*"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="vxod" Grid.Row="3" NavigationUIVisibility="Hidden"/>
+        <TextBlock FontSize="25px" VerticalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" Text="Японская кухня 'МАЙВАЙТАЙ'"  Background="#FFEEDDED"/>
+        <Button x:Name="autoriz" FontSize="20px" Content="Авторизоваться" Margin="20" Grid.Row="1" Click="autoriz_Click" Background="#FFAAE9FD"  />
+        <Button x:Name="zareg" FontSize="20px" Content="Зарегестрироватья" Margin="20" Grid.Row="2" Click="zareg_Click" Background="#FFAAE9FD" />
+    </Grid>
+</Window>
